@@ -1,0 +1,89 @@
+1.total no credit card issued this year =
+ TOTALYTD(COUNT(CreditCard[Card Number]),CreditCard[Issue Date]) 
+
+2.Total Number of Credit Cards Issued Last year(PARALLELPERIOD) =
+ TOTALYTD(COUNT(CreditCard[Card Number]),PARALLELPERIOD(CreditCard[Issue Date],-1,YEAR))
+
+3.Total Number of Credit Cards Issued Last year(SAMEPERIODLASTYEAR) = 
+TOTALYTD(COUNT(CreditCard[Card Number]),SAMEPERIODLASTYEAR(CreditCard[Issue Date]))
+
+4.Total Number of Credit Cards Issued This Quarter. = 
+TOTALYTD(COUNT(CreditCard[Card Number]),CreditCard[Issue Date])
+
+5.Total Number of Credit Cards Issued Last Quarter(PARALLELPERIOD) = 
+TOTALQTD(COUNT(CreditCard[Card Number]),PARALLELPERIOD(CreditCard[Issue Date],-1,QUARTER))
+
+6.Total Number of Credit Cards Issued This Month =
+ TOTALMTD(COUNT(CreditCard[Card Number]),CreditCard[Issue Date])
+
+7.Total Number of Credit Cards Issued Last Month(PARALLELPERIOD) =
+ TOTALMTD(COUNT(CreditCard[Card Number]),PARALLELPERIOD(CreditCard[Issue Date],-1,MONTH))
+
+8.Total Number of Credit Cards Issued for Current Quarter last year(SAMEPERIODLASTYEAR) = 
+TOTALQTD(COUNT(CreditCard[Card Number]),SAMEPERIODLASTYEAR(CreditCard[Issue Date]))
+
+9.Total Number of Credit Cards Issued for Current Month last year(SAMEPERIODLASTYEAR) =
+ TOTALMTD(COUNT(CreditCard[Card Number]),SAMEPERIODLASTYEAR(CreditCard[Issue Date])) 
+
+10.Year Over Year growth based on issued date(PARALLELPERIOD) = 
+DIVIDE([1.total no credit card issued this year]-[2.Total Number of Credit Cards Issued Last year(PARALLELPERIOD)],[2.Total Number of Credit Cards Issued Last year(PARALLELPERIOD)])
+
+11.Quarter Over Quarter growth based on issued date(PARALLELPERIOD) = 
+DIVIDE([4.Total Number of Credit Cards Issued This Quarter.]-[5.Total Number of Credit Cards Issued Last Quarter(PARALLELPERIOD)],[5.Total Number of Credit Cards Issued Last Quarter(PARALLELPERIOD)])
+
+12.Month Over Month growth based on issued date(PARALLELPERIOD) =
+ DIVIDE([6.Total Number of Credit Cards Issued This Month]-[7.Total Number of Credit Cards Issued Last Month(PARALLELPERIOD)],[7.Total Number of Credit Cards Issued Last Month(PARALLELPERIOD)])
+
+13.Year Over Year growth based on issued date(SAMEPERIODLASTYEAR) =
+ DIVIDE([1.total no credit card issued this year]-[3.Total Number of Credit Cards Issued Last year(SAMEPERIODLASTYEAR)],[3.Total Number of Credit Cards Issued Last year(SAMEPERIODLASTYEAR)])
+
+14.Quarter Over Quarter growth based on issued date(SAMEPERIODLASTYEAR) =
+ DIVIDE([4.Total Number of Credit Cards Issued This Quarter.]-[8.Total Number of Credit Cards Issued for Current Quarter last year(SAMEPERIODLASTYEAR)],[8.Total Number of Credit Cards Issued for Current Quarter last year(SAMEPERIODLASTYEAR)]) 
+
+15.Month Over Month growth based on issued date(SAMEPERIODLASTYEAR) =
+ DIVIDE([6.Total Number of Credit Cards Issued This Month]-[9.Total Number of Credit Cards Issued for Current Month last year(SAMEPERIODLASTYEAR)],[9.Total Number of Credit Cards Issued for Current Month last year(SAMEPERIODLASTYEAR)])
+
+16.Total Number of Credit Cards Expired This year = 
+TOTALYTD(COUNT(CreditCard[Card Number]),CreditCard[Expiry Date]) 
+
+17.Total Number of Credit Cards Expired Last year(PARALLELPERIOD) = 
+TOTALYTD(COUNT(CreditCard[Card Number]),PARALLELPERIOD(CreditCard[Expiry Date],-1,YEAR))
+
+18.Total Number of Credit Cards Expired Last year(SAMEPERIODLASTYEAR) =
+ TOTALYTD(COUNT(CreditCard[Card Number]),SAMEPERIODLASTYEAR(CreditCard[Expiry Date])) 
+
+19.Total Number of Credit Cards Expired This Quarter. =
+ TOTALQTD(COUNT(CreditCard[Card Number]),CreditCard[Expiry Date]) 
+
+20.Total Number of Credit Cards Expired Last Quarter(PARALLELPERIOD) =
+ TOTALQTD(COUNT(CreditCard[Card Number]),PARALLELPERIOD(CreditCard[Expiry Date],-1,QUARTER))
+
+21.Total Number of Credit Cards Expired This Month =
+ TOTALMTD(COUNT(CreditCard[Card Number]),CreditCard[Expiry Date])
+ 
+22.Total Number of Credit Cards Expired Last Month(PARALLELPERIOD) =
+ TOTALMTD(COUNT(CreditCard[Card Number]),PARALLELPERIOD(CreditCard[Expiry Date],-1,MONTH))
+
+23.Total Number of Credit Cards Expired for Current Quarter last year(SAMEPERIODLASTYEAR) =
+ TOTALYTD(COUNT(CreditCard[Card Number]),SAMEPERIODLASTYEAR(CreditCard[Expiry Date]))
+
+24.Total Number of Credit Cards Expired for Current Month last year(SAMEPERIODLASTYEAR) =
+ TOTALMTD(COUNT(CreditCard[Card Number]),SAMEPERIODLASTYEAR(CreditCard[Expiry Date]))
+
+25.Year Over Year growth based on Expired date(PARALLELPERIOD) =
+ DIVIDE([16.Total Number of Credit Cards Expired This year]-[17.Total Number of Credit Cards Expired Last year(PARALLELPERIOD)],[17.Total Number of Credit Cards Expired Last year(PARALLELPERIOD)])
+
+26.Quarter Over Quarter growth based on Expired date(PARALLELPERIOD) = 
+DIVIDE([19.Total Number of Credit Cards Expired This Quarter.]-[20.Total Number of Credit Cards Expired Last Quarter(PARALLELPERIOD)],[20.Total Number of Credit Cards Expired Last Quarter(PARALLELPERIOD)])
+
+27.Month Over Month growth based on Expired date(PARALLELPERIOD) = 
+DIVIDE([21.Total Number of Credit Cards Expired This Month]-[22.Total Number of Credit Cards Expired Last Month(PARALLELPERIOD)],[22.Total Number of Credit Cards Expired Last Month(PARALLELPERIOD)])
+
+28.Year Over Year growth based on Expired date(SAMEPERIODLASTYEAR) =
+ DIVIDE([16.Total Number of Credit Cards Expired This year]-[18.Total Number of Credit Cards Expired Last year(SAMEPERIODLASTYEAR)],[18.Total Number of Credit Cards Expired Last year(SAMEPERIODLASTYEAR)])
+
+29.Quarter Over Quarter growth based on Expired date(SAMEPERIODLASTYEAR) =
+ DIVIDE([19.Total Number of Credit Cards Expired This Quarter.]-[23.Total Number of Credit Cards Expired for Current Quarter last year(SAMEPERIODLASTYEAR)],[23.Total Number of Credit Cards Expired for Current Quarter last year(SAMEPERIODLASTYEAR)])
+
+30.Month Over Month growth based on Expired date(SAMEPERIODLASTYEAR) =
+ DIVIDE([21.Total Number of Credit Cards Expired This Month]-[24.Total Number of Credit Cards Expired for Current Month last year(SAMEPERIODLASTYEAR)],[24.Total Number of Credit Cards Expired for Current Month last year(SAMEPERIODLASTYEAR)]) 
